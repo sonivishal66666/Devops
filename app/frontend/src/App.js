@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
   const [data, setData] = useState(null);
@@ -12,13 +13,27 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Cloud Platform Demo</h1>
-        <p>
-          Backend Status: {data ? "Connected" : "Loading..."}
-        </p>
-        {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
-      </header>
+      <div className="dashboard-card">
+        <div className="header-row">
+          <div className="logo-icon">☁️</div>
+          <h1>Prod Platform</h1>
+        </div>
+
+        <div className="status-container">
+          <div className={`status-indicator ${data ? 'connected' : 'loading'}`}></div>
+          <span className={`status-text ${data ? 'connected' : 'loading'}`}>
+            {data ? "System Operational" : "Connecting..."}
+          </span>
+        </div>
+
+        <div className="data-window">
+          {data ? (
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+          ) : (
+            <pre>{"{ status: 'waiting_for_packet' }"}</pre>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
