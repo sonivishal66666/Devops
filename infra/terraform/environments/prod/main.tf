@@ -5,8 +5,24 @@ terraform {
       version = "~> 5.0"
     }
   }
-  # Note: Ideally you would enable backend "s3" here for state locking
-  # backend "s3" { ... }
+  # backend "s3" {
+  #   bucket         = "prod-furever-terraform-state"
+  #   key            = "prod/terraform.tfstate"
+  #   region         = "us-east-1"
+  #   dynamodb_table = "prod-furever-terraform-locks"
+  #   encrypt        = true
+  # }
+}
+
+# --- ECR Repositories ---
+resource "aws_ecr_repository" "backend" {
+  name = "backend"
+  force_delete = true # For demo purposes
+}
+
+resource "aws_ecr_repository" "frontend" {
+  name = "frontend"
+  force_delete = true
 }
 
 provider "aws" {
