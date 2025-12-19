@@ -1,4 +1,5 @@
-# 🚀 Production-Grade Cloud Platform (AWS EKS + Terraform)
+# FUREVER Platform  
+### 🚀 Production-Grade Cloud Platform (AWS EKS + Terraform)
 
 ![Terraform](https://img.shields.io/badge/IaC-Terraform_1.9.0-purple?style=for-the-badge&logo=terraform)
 ![Kubernetes](https://img.shields.io/badge/K8s-AWS_EKS_1.30-blue?style=for-the-badge&logo=kubernetes)
