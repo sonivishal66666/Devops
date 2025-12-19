@@ -1,4 +1,4 @@
-# 🚀 Product-Grade Cloud Platform (AWS EKS + Terraform)
+# 🚀 Production-Grade Cloud Platform (AWS EKS + Terraform)
 
 ![Terraform](https://img.shields.io/badge/IaC-Terraform_1.9.0-purple?style=for-the-badge&logo=terraform)
 ![Kubernetes](https://img.shields.io/badge/K8s-AWS_EKS_1.30-blue?style=for-the-badge&logo=kubernetes)
@@ -7,17 +7,17 @@
 ![Prometheus](https://img.shields.io/badge/Observability-Prometheus-orange?style=for-the-badge&logo=prometheus)
 ![Ansible](https://img.shields.io/badge/Config-Ansible-red?style=for-the-badge&logo=ansible)
 
-> **Live Demo**: [Click Here](http://k8s-ingress-nginx-controller-a13ec5b81f-675516227.us-east-1.elb.amazonaws.com/) *(Note: If link is down, infrastructure may be destroyed to save costs)*
+> **Live Demo**: [Click Here](http://k8s-ingress-nginx-controller-a13ec5b81f-675516227.us-east-1.elb.amazonaws.com/) *(Infrastructure is provisioned dynamically and torn down when not in use to optimize cloud costs)*
 
 ## 📖 Overview
-This repository hosts the source code for a highly available, self-healing, and observable cloud platform. It demonstrates a **GitOps-driven** approach to infrastructure and application delivery, built to withstand production-grade traffic and failures.
+This repository hosts the source code for a highly available, self-healing, and observable cloud platform. It demonstrates a **CI/CD-driven delivery with GitOps principles** approach to infrastructure and application delivery, built to withstand production-grade traffic and failures.
 
 **Key Engineering Highlights:**
 *   **Zero-Touch Provisioning**: Entire stack (VPC, EKS, IAM) bootstrapped via **Terraform**.
 *   **Self-Healing Compute**: **Kubernetes HPA** (Horizontal Pod Autoscaler) scales pods based on CPU load.
 *   **Immutable Infrastructure**: Application updates delivered via **Docker** containers using a Rolling Update strategy.
 *   **Observability First**: Integrated **Prometheus** & **Grafana** stack for real-time metrics and alerting.
-*   **Security by Design**: Least-privilege IAM roles (IRSA) and private subnets for worker nodes.
+*   **Security by Design**: Pods access AWS services via IRSA without static credentials.
 
 ---
 
@@ -173,4 +173,3 @@ terraform destroy
 *   [ ] Integrate **ELK Stack** for centralized logging.
 
 ---
-*Maintained by an aspiring DevOps Engineer ☁️*
