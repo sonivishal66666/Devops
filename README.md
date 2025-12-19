@@ -29,7 +29,7 @@ The architecture is designed for **High Availability (HA)** across multiple Avai
 graph TD
     User([👱 User]) -->|HTTPS/443| ALB[AWS Application Load Balancer]
     
-    subgraph VPC [AWS VPC (us-east-1)]
+    subgraph VPC ["AWS VPC (us-east-1)"]
         ALB -->|Route| Ingress[Nginx Ingress Controller]
         
         subgraph Public_Subnet [Public Subnets]
@@ -37,7 +37,7 @@ graph TD
             Bastion[Ansible Bastion Host]
         end
 
-        subgraph EKS_Cluster [EKS Cluster (Private Subnets)]
+        subgraph EKS_Cluster ["EKS Cluster (Private Subnets)"]
             Ingress -->|Service Routing| Frontend[⚛️ React UI]
             Ingress -->|Service Routing| Backend[🐍 Python API]
             
