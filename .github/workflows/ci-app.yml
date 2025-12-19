@@ -39,7 +39,7 @@ jobs:
 
       - name: Lint Backend
         run: |
-          pylint --disable=all --enable=errors app/backend/src/app.py
+          pylint -E app/backend/src/app.py
 
   build-push:
     name: Build & Push Docker Images
