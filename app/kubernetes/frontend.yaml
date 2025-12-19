@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-account-id.dkr.ecr.us-east-1.amazonaws.com/frontend:latest # Placeholder
+        image: 050451384252.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:

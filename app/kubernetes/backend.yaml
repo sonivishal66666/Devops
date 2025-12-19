@@ -20,7 +20,8 @@ spec:
     spec:
       containers:
       - name: backend
-        image: your-account-id.dkr.ecr.us-east-1.amazonaws.com/backend:latest # Placeholder
+        image: 050451384252.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         livenessProbe:
